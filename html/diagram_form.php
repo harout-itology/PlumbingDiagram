@@ -9,11 +9,14 @@ include ('../loader.php');
 
 if(isset($_GET['id'])){
     $diagram = new Diagram();
-    $output = $diagram->view($conn,$_GET['id'] );
+    $diagram_output = $diagram->view($conn,$_GET['id'] );
 }
 
 $shapes = new Shape();
-$output = $shapes->get($conn);
+$shapes_output = $shapes->get($conn);
+
+$ports = new Port();
+$ports_output = $ports->get_list($conn);
 
 $header='';
 
@@ -22,7 +25,7 @@ $body = '
     <div class="row">
         <div class="col-md-12">
             <div class="mp_menu">
-                    <input id="name" value="" placeholder="Name" class="form-control " >
+                    <input id="name" value="'.@$diagram_output['name'].'" placeholder="Name" class="form-control " >
                     <button class="btn btn-default" id="SaveButton" onclick="save()"> Save</button>
                     <button class="btn btn-default" onclick="load()">Load</button>
                     <button class="btn btn-default" onclick="erase()">Erase</button>
@@ -36,7 +39,7 @@ $body = '
 <textarea id="mySavedModel" style="display:none" rows="10" cols="100">';
 
 if(isset($_GET['id'])){
-    $body .= $output['content'];
+    $body .= $diagram_output['content'];
 }
 else{
     $body .='{ "class": "go.GraphLinksModel",
@@ -70,7 +73,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                 window.localStorage.setItem("diagram", temp);
                 // db ajax save
                 xhr = new XMLHttpRequest();
-                xhr.open("POST", "");
+                xhr.open("POST", "/html/diagram_func.php");
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onload = function() {
                     if (xhr.status === 200)
@@ -78,7 +81,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                     else if (xhr.status !== 200)
                         console.log(xhr.status);
                 };
-                xhr.send("name="+document.getElementById("name").value+"&mySavedModel="+temp+"&image="+new XMLSerializer().serializeToString(svg));
+                xhr.send("id='.$_GET['id'].'&name="+document.getElementById("name").value+"&content="+temp+"&image="+new XMLSerializer().serializeToString(svg));
             }';
         }
         else {
@@ -94,15 +97,15 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                 window.localStorage.setItem("diagram", temp);
                 // db ajax save
                 xhr = new XMLHttpRequest();
-                xhr.open("POST", "");
+                xhr.open("POST", "/html/diagram_func.php");
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");            
                 xhr.onload = function() {
-                    if (xhr.status === 200)
-                        location.href= "/"+xhr.responseText+"/";
+                    if (xhr.status === 200)                       
+                        location.href= "/html/diagram_form.php?id="+xhr.responseText;
                     else if (xhr.status !== 200)
                         console.log(xhr.status);
                 };
-                xhr.send("name="+document.getElementById("name").value+"&mySavedModel="+temp+"&image="+new XMLSerializer().serializeToString(svg));
+                xhr.send("name="+document.getElementById("name").value+"&content="+temp+"&image="+new XMLSerializer().serializeToString(svg));
             }
             ';
         }
@@ -113,7 +116,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
             myDiagram.model = go.Model.fromJson(go.Model.fromJson(document.getElementById("mySavedModel").value));
         }
         function erase() {
-            window.localStorage.removeItem(\'diagram\');
+            window.localStorage.removeItem("diagram");
             var erase  = \'{ "class": "go.GraphLinksModel",                "copiesArrays": true,                "copiesArrayObjects": true,                "linkFromPortIdProperty": "fromPort",                "linkToPortIdProperty": "toPort",                "nodeDataArray": [],                "linkDataArray": []            }\';
             document.getElementById("mySavedModel").value = erase;
             myDiagram.model = go.Model.fromJson(go.Model.fromJson(erase));
@@ -171,10 +174,11 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                                 { stroke: "#2F4F4F", strokeWidth: 2 },
                                 new go.Binding("stroke", "link")
                         )
-                );
+                );';
          
-        <?php foreach($shapes as $item): ?>
-            myDiagram.nodeTemplateMap.add("connect{{$item->id}}",
+        foreach($shapes_output as $item):
+            $footer .= '
+            myDiagram.nodeTemplateMap.add("connect'.$item['id'].'",
                 $(go.Node, "Table",
                         { locationObjectName: "BODY",
                             locationSpot: go.Spot.Left,
@@ -183,9 +187,9 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                         new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
                         $(go.Panel, "Auto",
                         { row: 1, column: 1, name: "BODY" },
-                        $(go.Shape, "{{$item->type}}",
-                        { width: "{{$item->width}}", height: "{{$item->height}}", fill: "{{$item->background}}", stroke: "#888888" }),
-                        $(go.TextBlock, {margin: 10, textAlign: "center", text: "{{$item->name}}" ,  stroke: "{{$item->border}}" })
+                        $(go.Shape, "'.$item['type'].'",
+                        { width: "'.$item['width'].'", height: "'.$item['height'].'", fill: "'.$item['background'].'", stroke: "#888888" }),
+                        $(go.TextBlock, {margin: 10, textAlign: "center", text: "'.$item['name'].'" ,  stroke: "'.$item['color'].'" })
                     ),
                     // four named ports, one on each side:
                         $(go.Panel, "Horizontal", new go.Binding("itemArray", "Top"),
@@ -256,55 +260,58 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                                         )
                                 }
                         )
-                ));
-        <?php endforeach; ?>
+                ));';
+
+        endforeach;
+
+        $footer .= '
         // initialize the Palette that is on the left side of the page
         myPalette =
             $(go.Palette, "myPaletteDiv",  // must name or refer to the DIV HTML element
                 {
-                    nodeTemplateMap: myDiagram.nodeTemplateMap,  // share the templates used by myDiagram
-                    model: new go.GraphLinksModel([  // specify the contents of the Palette
-                            <?php foreach($shapes as $item): ?>
-                                { category: "connect{{$item->id}}",
-                                        Top : [
-                                                <?php if(isset($ports[\'Top\'])): ?>
-                                                    <?php foreach($ports[\'Top\'] as $p): ?>
-                                                        <?php if($p->shape_id==$item->id): ?>
-                                                            {"portColor":"{{$p->color}}", "portId":"{{$p->id}}"},
-                                                        <?php endif; ?>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                        ],
-                                        Right : [
-                                                <?php if(isset($ports[\'Right\'])): ?>
-                                                    <?php foreach($ports[\'Right\'] as $p): ?>
-                                                        <?php if($p->shape_id==$item->id): ?>
-                                                            {"portColor":"{{$p->color}}", "portId":"{{$p->id}}"},
-                                                        <?php endif; ?>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                        ],
-                                        Bottom : [
-                                                <?php if(isset($ports[\'Bottom\'])): ?>
-                                                    <?php foreach($ports[\'Bottom\'] as $p): ?>
-                                                        <?php if($p->shape_id==$item->id): ?>
-                                                            {"portColor":"{{$p->color}}", "portId":"{{$p->id}}"},
-                                                        <?php endif; ?>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                        ],
-                                        Left : [
-                                                <?php if(isset($ports[\'Left\'])): ?>
-                                                    <?php foreach($ports[\'Left\'] as $p): ?>
-                                                        <?php if($p->shape_id==$item->id): ?>
-                                                            {"portColor":"{{$p->color}}", "portId":"{{$p->id}}"},
-                                                        <?php endif; ?>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                        ]
-                                },
-                        <?php endforeach; ?>
-                    ])
+                    nodeTemplateMap: myDiagram.nodeTemplateMap,  
+                    model: new go.GraphLinksModel([  ';
+                            foreach($shapes_output as $item):
+                                $footer .= '{ category: "connect'.$item['id'].'",
+                                        Top : [';
+                                                if(isset($ports_output['Top'])):
+                                                    foreach($ports_output['Top'] as $p):
+                                                        if($p['shape_id']==$item['id']):
+                                                            $footer .= ' {"portColor":"'.$p['color'].'", "portId":"'.$p['id'].'"},';
+                                                        endif;
+                                                    endforeach;
+                                                endif;
+                                        $footer .= '],
+                                        Right : [';
+                                                if(isset($ports_output['Right'])):
+                                                    foreach($ports_output['Right'] as $p):
+                                                        if($p['shape_id']==$item['id']):
+                                                            $footer .= ' {"portColor":"'.$p['color'].'", "portId":"'.$p['id'].'"},';
+                                                        endif;
+                                                    endforeach;
+                                                endif;
+                                        $footer .= '],
+                                        Bottom : [';
+                                                if(isset($ports_output['Bottom'])):
+                                                    foreach($ports_output['Bottom'] as $p):
+                                                        if($p['shape_id']==$item['id']):
+                                                            $footer .= ' {"portColor":"'.$p['color'].'", "portId":"'.$p['id'].'"},';
+                                                        endif;
+                                                    endforeach;
+                                                endif;
+                                        $footer .= '],
+                                        Left : [';
+                                                if(isset($ports_output['Left'])):
+                                                    foreach($ports_output['Left'] as $p):
+                                                        if($p['shape_id']==$item['id']):
+                                                            $footer .= ' {"portColor":"'.$p['color'].'", "portId":"'.$p['id'].'"},';
+                                                        endif;
+                                                    endforeach;
+                                                endif;
+                                        $footer .= ']
+                                },';
+                        endforeach;
+                $footer .= '])
                 });
         load();  // load an initial diagram from some JSON text
     </script>';

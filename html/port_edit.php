@@ -68,10 +68,10 @@ foreach ($input_port as $items){
                     </div>
                     <div class="col-md-3">
                         <select class="form-control" name="type[]" required>
-                                                                                    <option  value="Top">Top</option>
-                                                                                    <option  value="Right">Right</option>
-                                                                                    <option  value="Bottom">Bottom</option>
-                                                                                    <option  value="Left">Left</option>
+                                                                                    <option '; if($items['type']=='Top')$body .='selected'; $body .= 'value="Top">Top</option>
+                                                                                    <option '; if($items['type']=='Right')$body .='selected'; $body .= ' value="Right">Right</option>
+                                                                                    <option '; if($items['type']=='Bottom')$body .='selected'; $body .= ' value="Bottom">Bottom</option>
+                                                                                    <option '; if($items['type']=='Left')$body .='selected'; $body .= ' value="Left">Left</option>
                         </select>
                     </div>
                     <div class="col-md-3">

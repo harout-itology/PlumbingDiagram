@@ -17,6 +17,26 @@ class Port extends AbstractClass{
         return $output->fetchAll();
     }
 
+    public function get_list($conn){
+
+        $sql = "SELECT *  FROM  `ports`  WHERE `type` = 'Top' ";
+        $output = $conn->query($sql);
+        $Top =  $output->fetchAll();
+        $sql = "SELECT *  FROM  `ports`  WHERE `type` = 'Right' ";
+        $output = $conn->query($sql);
+        $Right =  $output->fetchAll();
+        $sql = "SELECT *  FROM  `ports`  WHERE `type` = 'Bottom' ";
+        $output = $conn->query($sql);
+        $Bottom =  $output->fetchAll();
+        $sql = "SELECT *  FROM  `ports`  WHERE `type` = 'left' ";
+        $output = $conn->query($sql);
+        $left =  $output->fetchAll();
+
+        return ['Top'=>$Top,'Right'=>$Right,'Bottom'=>$Bottom,'Left'=>$left];
+
+    }
+
+
     public function edit($conn,$post){
 
         if(isset($post['id'])){
