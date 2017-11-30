@@ -1,0 +1,51 @@
+.img{
+	width: 100%;
+        min-height: 200px;
+        border: #d3e0e9 thin solid;
+ }
+svg{
+	max-width: 300px !important;
+}
+
+#app{
+	min-height: 570px;
+}
+.footer{
+	   padding-top: 15px;
+}
+table{
+    background-color: white ;
+}
+.form-group{
+    height: 30px;
+}
+
+
+#myDiagramDiv{
+    border: solid 1px lightblue;
+    width: 90%;
+    height: 480px;
+    float: left;
+    background-color: #DAE4E4;
+    margin-bottom:20px ;
+}
+#myPaletteDiv{
+    border: solid 1px lightblue;
+    width: 10%;
+    height: 480px;
+    background-color: #DAE4E4;
+    float: right;
+    margin-bottom:20px ;
+}
+.mp_menu{
+    position: absolute;
+    left: 0;
+    width: 120px;
+    z-index: 10;
+    padding: 80px  0 0 30px
+}
+.mp_menu button, .mp_menu  input{
+    margin-bottom: 10px;
+    width: 100px;
+    text-align: center;
+}
