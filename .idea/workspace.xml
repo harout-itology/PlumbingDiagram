@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49468578-cef4-4b52-9b13-3b555bbacfed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/plumbingdiagram_diagrams.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/plumbingdiagram_ports.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/plumbingdiagram_shapes.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/diagram_func.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/9e86d0a2-2759-443a-8c5d-21948bb47383.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/9e86d0a2-2759-443a-8c5d-21948bb47383.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/plumbingdiagram_structure.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/class/Diagram.php" afterPath="$PROJECT_DIR$/class/Diagram.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/class/Port.php" afterPath="$PROJECT_DIR$/class/Port.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/diagram_form.php" afterPath="$PROJECT_DIR$/html/diagram_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/port.php" afterPath="$PROJECT_DIR$/html/port.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/port_edit.php" afterPath="$PROJECT_DIR$/html/port_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/shape.php" afterPath="$PROJECT_DIR$/html/shape.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/plumbingdiagram_shapes.sql" afterPath="$PROJECT_DIR$/database/plumbingdiagram_shapes.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,7 +35,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,19 +83,21 @@
         <option value="$PROJECT_DIR$/../test.php" />
         <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/html/diagram.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_1.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_2.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_3.sql" />
         <option value="$PROJECT_DIR$/html/port_edit.php" />
         <option value="$PROJECT_DIR$/class/Port.php" />
         <option value="$PROJECT_DIR$/html/diagram_func.php" />
         <option value="$PROJECT_DIR$/class/Diagram.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_4.sql" />
         <option value="$PROJECT_DIR$/html/shape.php" />
         <option value="$PROJECT_DIR$/html/port.php" />
         <option value="$PROJECT_DIR$/html/diagram_form.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_5.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_1.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_2.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_3.sql" />
+        <option value="$PROJECT_DIR$/database/plumbingdiagram_shapes.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_4.sql" />
+        <option value="$PROJECT_DIR$/database/plumbingdiagram_structure.sql" />
       </list>
     </option>
   </component>
@@ -151,12 +141,7 @@
             <path>
               <item name="PlumbingDiagram" type="b2602c69:ProjectViewProjectNode" />
               <item name="PlumbingDiagram" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="class" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PlumbingDiagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlumbingDiagram" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -171,12 +156,137 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents" />
+    <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/html" />
       <recent name="$PROJECT_DIR$/class" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/dataSources.local.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/dataSources/9e86d0a2-2759-443a-8c5d-21948bb47383.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/class/Diagram.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/class/Port.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/html/diagram_form.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/html/port.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/html/port_edit.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/html/shape.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/markdown-navigator.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/database/plumbingdiagram_diagrams.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/database/plumbingdiagram_ports.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/database/plumbingdiagram_shapes.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/html/diagram_func.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -214,29 +324,39 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44071000" />
+    <option name="totallyTimeSpent" value="45889000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1366" height="742" extended-state="6" />
+    <frame x="1511" y="61" width="1922" height="1062" extended-state="6" />
     <layout>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18516542" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21515152" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21558164" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21515152" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -274,77 +394,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/html/diagram_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
-          <folding>
-            <marker date="1512074459030" expanded="true" signature="403:1115" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="425:1108" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="457:1097" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:536" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:537" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:578" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:658" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:980" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="1152:1164" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/Diagram.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding>
-            <marker date="1512073681824" expanded="true" signature="180:225" ph="SELECT * FRO... diagrams" />
-            <marker date="1512073681824" expanded="true" signature="365:410" ph="SELECT * FRO... diagrams" />
-            <marker date="1512073681824" expanded="true" signature="837:927" ph="INSERT INTO `diagrams`... " />
-            <marker date="1512073681824" expanded="true" signature="837:969" ph="INSERT INTO `diagrams`... " />
-            <marker date="1512073681824" expanded="true" signature="1391:1526" ph="UPDATE `diag... " />
-            <marker date="1512073681824" expanded="true" signature="1391:1527" ph="UPDATE `diag... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/diagram_form.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding>
-            <marker date="1512074459030" expanded="true" signature="403:1115" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="425:1108" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="457:1097" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:536" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:537" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:578" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:658" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:980" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="1152:1164" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/Port.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="62" lean-forward="false" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/diagram_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding>
-            <marker date="1512074459030" expanded="true" signature="403:1115" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="425:1108" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="457:1097" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:536" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:537" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:578" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:658" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:980" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="1152:1164" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -362,16 +414,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.shapes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.shapes" />
     <entry file="file://$PROJECT_DIR$/html/diagram.html" />
     <entry file="file://$PROJECT_DIR$/class/gh.php" />
-    <entry file="das://table:/949701d0/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
     <entry file="file://$PROJECT_DIR$/html/shape_create.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -394,7 +439,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess" />
-    <entry file="das://table:/949701d0/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.shapes" />
     <entry file="file://$PROJECT_DIR$/../test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -402,7 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/949701d0/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.ports" />
     <entry file="file://$PROJECT_DIR$/html/shape_edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -424,13 +467,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
     <entry file="file://$PROJECT_DIR$/config/db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -438,97 +475,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="76" lean-forward="false" selection-start-line="0" selection-start-column="76" selection-end-line="0" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_3.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="34" column="62" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
     <entry file="file://$PROJECT_DIR$/class/Port.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -562,14 +517,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="56" column="8" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-          <folding>
-            <marker date="1512073681824" expanded="true" signature="180:225" ph="SELECT * FRO... diagrams" />
-            <marker date="1512073681824" expanded="true" signature="365:410" ph="SELECT * FRO... diagrams" />
-            <marker date="1512073681824" expanded="true" signature="837:927" ph="INSERT INTO `diagrams`... " />
-            <marker date="1512073681824" expanded="true" signature="837:969" ph="INSERT INTO `diagrams`... " />
-            <marker date="1512073681824" expanded="true" signature="1391:1526" ph="UPDATE `diag... " />
-            <marker date="1512073681824" expanded="true" signature="1391:1527" ph="UPDATE `diag... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -577,11 +525,99 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.ports" />
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.shapes" />
+    <entry file="file://$PROJECT_DIR$/html/port.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.ports">
+    <entry file="file://$PROJECT_DIR$/html/shape.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="48" column="53" lean-forward="false" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/diagram.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="74" lean-forward="false" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/diagram_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="190" column="48" lean-forward="false" selection-start-line="190" selection-start-column="48" selection-end-line="190" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams" />
+    <entry file="das://table:/949701d0/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="2315" lean-forward="false" selection-start-line="10" selection-start-column="2315" selection-end-line="10" selection-end-column="2315" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/949701d0/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.ports">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="54" column="167" lean-forward="false" selection-start-line="54" selection-start-column="167" selection-end-line="54" selection-end-column="167" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_3.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="196" lean-forward="false" selection-start-line="9" selection-start-column="196" selection-end-line="9" selection-end-column="196" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/plumbingdiagram_diagrams.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="0" column="995" lean-forward="false" selection-start-line="0" selection-start-column="995" selection-end-line="0" selection-end-column="995" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/plumbingdiagram_ports.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="109" lean-forward="false" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/949701d0/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.shapes">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -590,98 +626,40 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_4.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="45" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="84" />
+        <state relative-caret-position="162">
+          <caret line="9" column="203" lean-forward="false" selection-start-line="9" selection-start-column="203" selection-end-line="9" selection-end-column="203" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.shapes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/port.php">
+    <entry file="file://$PROJECT_DIR$/database/plumbingdiagram_shapes.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-          <folding>
-            <marker date="1512074214411" expanded="true" signature="382:416" ph="..." />
-            <marker date="1512074214411" expanded="true" signature="548:1060" ph="..." />
-            <marker date="1512074214411" expanded="true" signature="580:1003" ph="..." />
-            <marker date="1512074214411" expanded="true" signature="613:970" ph="..." />
-            <marker date="1512074214411" expanded="true" signature="1023:1060" ph="..." />
-            <marker date="1512074214411" expanded="true" signature="1149:1841" ph="..." />
-            <marker date="1512074214411" expanded="true" signature="1554:1809" ph="..." />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/shape.php">
+    <entry file="file://$PROJECT_DIR$/database/plumbingdiagram_structure.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="48" column="53" lean-forward="false" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
-          <folding>
-            <marker date="1512074214467" expanded="true" signature="382:577" ph="..." />
-            <marker date="1512074214467" expanded="true" signature="408:577" ph="..." />
-            <marker date="1512074214467" expanded="true" signature="444:577" ph="..." />
-            <marker date="1512074214467" expanded="true" signature="720:1232" ph="..." />
-            <marker date="1512074214467" expanded="true" signature="752:1175" ph="..." />
-            <marker date="1512074214467" expanded="true" signature="785:1142" ph="..." />
-            <marker date="1512074214467" expanded="true" signature="1195:1232" ph="..." />
-            <marker date="1512074214467" expanded="true" signature="1345:2110" ph="..." />
-            <marker date="1512074214467" expanded="true" signature="1750:2078" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/diagram.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="74" lean-forward="false" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
-          <folding>
-            <marker date="1512063059793" expanded="true" signature="221:416" ph="..." />
-            <marker date="1512063059793" expanded="true" signature="247:416" ph="..." />
-            <marker date="1512063059793" expanded="true" signature="283:416" ph="..." />
-            <marker date="1512063059793" expanded="true" signature="525:1077" ph="..." />
-            <marker date="1512063059793" expanded="true" signature="579:1054" ph="..." />
-            <marker date="1512063059793" expanded="true" signature="628:1027" ph="..." />
-            <marker date="1512063059793" expanded="true" signature="870:996" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/diagram_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="190" column="48" lean-forward="false" selection-start-line="190" selection-start-column="48" selection-end-line="190" selection-end-column="48" />
-          <folding>
-            <marker date="1512074459030" expanded="true" signature="403:1115" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="425:1108" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="457:1097" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:536" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:537" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:578" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:658" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="491:980" ph="..." />
-            <marker date="1512074459030" expanded="true" signature="1152:1164" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/6d19a2ea/9e86d0a2-2759-443a-8c5d-21948bb47383/plumbingdiagram.diagrams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+        <state relative-caret-position="720">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console_5.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="26" column="67" lean-forward="true" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+        <state relative-caret-position="252">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e86d0a2-2759-443a-8c5d-21948bb47383/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
