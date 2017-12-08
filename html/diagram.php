@@ -26,7 +26,7 @@ $body = '
                                 $item['image']
                             .'</div></a>
                             <div class="caption">
-                                <h3>'.$item['name'].'</h3>                                
+                                <h3> &nbsp; '.$item['sector']  .'</h3>                                
                             </div>
                         </div>
                     </div>

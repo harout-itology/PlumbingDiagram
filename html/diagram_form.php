@@ -10,6 +10,8 @@ include ('../loader.php');
 if(isset($_GET['id'])){
     $diagram = new Diagram();
     $diagram_output = $diagram->view($conn,$_GET['id'] );
+    $diagram_data = $diagram_output['diagram'];
+    $diagram_shapes = $diagram_output['shapes'];
 }
 
 $shapes = new Shape();
@@ -25,7 +27,10 @@ $body = '
     <div class="row">
         <div class="col-md-12">
             <div class="mp_menu">
-                    <input id="name" value="'.@$diagram_output['name'].'" placeholder="Name" class="form-control " >
+                    <input id="sector" value="'.@$diagram_data['sector'].'" placeholder="Sector" class="form-control " >
+                    <input id="width" value="'.@$diagram_data['width'].'" placeholder="Width" class="form-control " >
+                    <input id="height" value="'.@$diagram_data['height'].'" placeholder="Height" class="form-control " >
+                    <input id="background" value="'.@$diagram_data['background'].'" placeholder="Background" class="form-control " >
                     <button class="btn btn-default" id="SaveButton" onclick="save()"> Save</button>
                     <button class="btn btn-default" onclick="load()">Load</button>
                     <button class="btn btn-default" onclick="erase()">Erase</button>
@@ -36,25 +41,21 @@ $body = '
         </div>
     </div>
 </div>
-<textarea id="mySavedModel" style="display:none" rows="10" cols="100">';
-
-if(isset($_GET['id'])){
-    $body .= $diagram_output['content'];
-}
-else{
-    $body .='{ "class": "go.GraphLinksModel",
+<textarea id="mySavedModel" style="display:none" rows="10" cols="100">
+{ "class": "go.GraphLinksModel",
           "copiesArrays": true,
           "copiesArrayObjects": true,
           "linkFromPortIdProperty": "fromPort",
           "linkToPortIdProperty": "toPort",
-          "nodeDataArray": [],
-          "linkDataArray": []
-        }';
+          "nodeDataArray": ';
+if(isset($_GET['id'])){
+    $body .= json_encode($diagram_shapes);
 }
-
-
-
-$body .='</textarea>';
+$body .=
+',
+          "linkDataArray": []
+        }
+</textarea>';
 
 
 $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
@@ -81,7 +82,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                     else if (xhr.status !== 200)
                         console.log(xhr.status);
                 };
-                xhr.send("id='.$_GET['id'].'&name="+document.getElementById("name").value+"&content="+temp+"&image="+new XMLSerializer().serializeToString(svg));
+                xhr.send("sector="+document.getElementById("sector").value+"&width="+document.getElementById("width").value+"&height="+document.getElementById("height").value+"&background="+document.getElementById("background").value+"&id='.$_GET['id'].'&content="+temp+"&image="+new XMLSerializer().serializeToString(svg));
             }';
         }
         else {
@@ -100,12 +101,13 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                 xhr.open("POST", "/html/diagram_func.php");
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");            
                 xhr.onload = function() {
-                    if (xhr.status === 200)                        
+                    if (xhr.status === 200)     
+                        //console.log(xhr.responseText);             
                         location.href= "/html/diagram_form.php?id="+xhr.responseText;
                     else if (xhr.status !== 200)
                         console.log(xhr.status);
                 };
-                xhr.send("name="+document.getElementById("name").value+"&content="+temp+"&image="+new XMLSerializer().serializeToString(svg));
+                xhr.send("sector="+document.getElementById("sector").value+"&width="+document.getElementById("width").value+"&height="+document.getElementById("height").value+"&background="+document.getElementById("background").value+"&content="+temp+"&image="+new XMLSerializer().serializeToString(svg));
             }
             ';
         }
@@ -178,7 +180,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
          
         foreach($shapes_output as $item):
             $footer .= '
-            myDiagram.nodeTemplateMap.add("connect'.$item['id'].'",
+            myDiagram.nodeTemplateMap.add("'.$item['id'].'",
                 $(go.Node, "Table",
                         { locationObjectName: "BODY",
                             locationSpot: go.Spot.Left,
@@ -272,7 +274,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                     nodeTemplateMap: myDiagram.nodeTemplateMap,  
                     model: new go.GraphLinksModel([  ';
                             foreach($shapes_output as $item):
-                                $footer .= '{ category: "connect'.$item['id'].'",
+                                $footer .= '{ category: "'.$item['id'].'",
                                         Top : [';
                                                 if(isset($ports_output['Top'])):
                                                     foreach($ports_output['Top'] as $p):
