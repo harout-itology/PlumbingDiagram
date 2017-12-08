@@ -8,7 +8,7 @@
 
 include ('../loader.php');
 
-if($_POST['id']){
+if(isset($_POST['id'])){
     $diagram = new Diagram();
     echo $diagram->edit($conn, $_POST);
 }

@@ -47,7 +47,7 @@ $body .= ' <form class="form-horizontal" method="post" action="">
                             <label>Port Name</label>
                         </div>
                         <div class="col-md-3">
-                            <label>Port Type</label>
+                            <label>Port Location</label>
                         </div>
                         <div class="col-md-3">
                             <label>Port Color</label>
@@ -67,11 +67,11 @@ foreach ($input_port as $items){
                         <input type="text" class="form-control" name="name[]" placeholder="Port Name" value="'.$items['name'].'" required  >
                     </div>
                     <div class="col-md-3">
-                        <select class="form-control" name="type[]" required>
-                                                                                    <option '; if($items['type']=='Top')$body .='selected'; $body .= 'value="Top">Top</option>
-                                                                                    <option '; if($items['type']=='Right')$body .='selected'; $body .= ' value="Right">Right</option>
-                                                                                    <option '; if($items['type']=='Bottom')$body .='selected'; $body .= ' value="Bottom">Bottom</option>
-                                                                                    <option '; if($items['type']=='Left')$body .='selected'; $body .= ' value="Left">Left</option>
+                        <select class="form-control" name="location[]" required>
+                                                                                    <option '; if($items['location']=='Top')$body .='selected'; $body .= 'value="Top">Top</option>
+                                                                                    <option '; if($items['location']=='Right')$body .='selected'; $body .= ' value="Right">Right</option>
+                                                                                    <option '; if($items['location']=='Bottom')$body .='selected'; $body .= ' value="Bottom">Bottom</option>
+                                                                                    <option '; if($items['location']=='Left')$body .='selected'; $body .= ' value="Left">Left</option>
                         </select>
                     </div>
                     <div class="col-md-3">
@@ -100,7 +100,8 @@ $body .= '
 </div>';
 
 
-$footer='<script>
+$footer='
+<script>
 
     function hid(id){
         $("#"+id).hide();
@@ -115,7 +116,7 @@ $footer='<script>
             \'<input type="text" class="form-control" name="name[]" placeholder="Port Name" value="" required>\'+
             \'</div>\'+
         \'<div class="col-md-3">\'+
-            \'<select class="form-control" name="type[]" required>\'+
+            \'<select class="form-control" name="location[]" required>\'+
                 \'<option value="Top">Top</option>\'+
                 \'<option value="Right">Right</option>\'+
                 \'<option value="Bottom">Bottom</option>\'+
@@ -137,7 +138,8 @@ $footer='<script>
             $("#"+id).remove();
         }
 
-</script>';
+</script>
+';
 
 include ('master.php');
 

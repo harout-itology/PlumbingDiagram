@@ -16,7 +16,7 @@ create table ports
 		primary key,
 	shape_id int null,
 	name varchar(55) null,
-	type varchar(55) null,
+	location varchar(55) null,
 	color varchar(55) null,
 	created datetime null,
 	updated varchar(55) null

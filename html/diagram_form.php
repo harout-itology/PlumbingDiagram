@@ -100,7 +100,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                 xhr.open("POST", "/html/diagram_func.php");
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");            
                 xhr.onload = function() {
-                    if (xhr.status === 200)                       
+                    if (xhr.status === 200)                        
                         location.href= "/html/diagram_form.php?id="+xhr.responseText;
                     else if (xhr.status !== 200)
                         console.log(xhr.status);

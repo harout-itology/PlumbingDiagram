@@ -38,7 +38,7 @@ class Shape extends AbstractClass{
     public function edit($conn,$post){
 
         $date= date('Y-m-d H:i:s');
-        $sql = "UPDATE `shapes` SET `note` = '$post[note]', `type` = '$post[type]',`width` = '$post[width]',`height` = '$post[height]',`background` = '$post[background]',`color` = '$post[color]',`updated` = '$date'  where  `id` =  '$post[id]' ";
+        $sql = "UPDATE `shapes` SET `note` = '$post[note]', `type` = '$post[type]' , `width` = '$post[width]',`height` = '$post[height]',`background` = '$post[background]',`color` = '$post[color]',`updated` = '$date'  where  `id` =  '$post[id]' ";
         $conn->exec($sql);
         return $post;
 
