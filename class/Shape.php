@@ -21,8 +21,8 @@ class Shape extends AbstractClass{
     public function set($conn,$post){
 
         $date= date('Y-m-d H:i:s');
-        $sql = "INSERT INTO `shapes` (`name`, `type`, `width`, `height`, `background`, `color`, `created` )  VALUES 
-               ('$post[name]','$post[type]','$post[width]','$post[height]','$post[background]','$post[color]','$date' ) ";
+        $sql = "INSERT INTO `shapes` (`note`, `type`, `width`, `height`, `background`, `color`, `created` )  VALUES 
+               ('$post[note]','$post[type]','$post[width]','$post[height]','$post[background]','$post[color]','$date' ) ";
         return $conn->exec($sql);
 
     }
@@ -38,7 +38,7 @@ class Shape extends AbstractClass{
     public function edit($conn,$post){
 
         $date= date('Y-m-d H:i:s');
-        $sql = "UPDATE `shapes` SET `name` = '$post[name]', `type` = '$post[type]',`width` = '$post[width]',`height` = '$post[height]',`background` = '$post[background]',`color` = '$post[color]',`updated` = '$date'  where  `id` =  '$post[id]' ";
+        $sql = "UPDATE `shapes` SET `note` = '$post[note]', `type` = '$post[type]',`width` = '$post[width]',`height` = '$post[height]',`background` = '$post[background]',`color` = '$post[color]',`updated` = '$date'  where  `id` =  '$post[id]' ";
         $conn->exec($sql);
         return $post;
 

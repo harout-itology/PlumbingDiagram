@@ -189,7 +189,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                         { row: 1, column: 1, name: "BODY" },
                         $(go.Shape, "'.$item['type'].'",
                         { width: "'.$item['width'].'", height: "'.$item['height'].'", fill: "'.$item['background'].'", stroke: "#888888" }),
-                        $(go.TextBlock, {margin: 10, textAlign: "center", text: "'.$item['name'].'" ,  stroke: "'.$item['color'].'" })
+                        $(go.TextBlock, {margin: 10, textAlign: "center", text: "'.$item['note'].'" ,  stroke: "'.$item['color'].'" })
                     ),
                     // four named ports, one on each side:
                         $(go.Panel, "Horizontal", new go.Binding("itemArray", "Top"),

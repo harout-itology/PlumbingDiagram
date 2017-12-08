@@ -27,7 +27,7 @@ create table shapes
 (
 	id int auto_increment
 		primary key,
-	name varchar(255) null,
+	note varchar(255) null,
 	type varchar(55) null,
 	width varchar(55) null,
 	height varchar(55) null,

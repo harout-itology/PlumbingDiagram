@@ -30,9 +30,9 @@ $body = '
 
 $body .= '    <form class="form-horizontal" method="post" action=""> 
                     <div class="form-group">
-                        <label for="name" class="col-md-2 control-label">Name</label>
+                        <label for="name" class="col-md-2 control-label">Note</label>
                         <div class="col-md-10">
-                            <input id="name" type="text" class="form-control" name="name" placeholder="Shape Name" value="'.$input['name'].'" required autofocus>
+                            <input id="name" type="text" class="form-control" name="note" placeholder="Shape Note" value="'.$input['note'].'" required autofocus>
                         </div>
                     </div>                 
                     <div class="form-group">

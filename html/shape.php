@@ -32,7 +32,7 @@ $body = '
     $body .= '<table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>Note</th>
                                 <th>Type</th>
                                 <th>Background</th>
                                 <th>Created</th>                                
@@ -46,7 +46,7 @@ $body = '
             foreach ($output as $item){
                 $body .= '            
                           <tr >
-                                    <td>'.$item['name'].'</td>
+                                    <td>'.$item['note'].'</td>
                                     <td>'.$item['type'].'</td>
                                     <td>'.$item['background'].'</td>
                                     <td>'.$item['created'].'</td>
