@@ -20,6 +20,9 @@ $shapes_output = $shapes->get($conn);
 $ports = new Port();
 $ports_output = $ports->get_list($conn);
 
+$lines = new Line();
+$lines_output = $lines->get($conn);
+
 $header='';
 
 $body = '
@@ -51,6 +54,8 @@ $body = '
 if(isset($_GET['id'])){
     $body .= json_encode($diagram_shapes);
 }
+else
+    $body .= '[]';
 $body .=
 ',
           "linkDataArray": []
@@ -108,8 +113,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                         console.log(xhr.status);
                 };
                 xhr.send("sector="+document.getElementById("sector").value+"&width="+document.getElementById("width").value+"&height="+document.getElementById("height").value+"&background="+document.getElementById("background").value+"&content="+temp+"&image="+new XMLSerializer().serializeToString(svg));
-            }
-            ';
+            }';
         }
 
 
@@ -149,8 +153,10 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                             // support grid snapping when dragging and when resizing
                             "draggingTool.isGridSnapEnabled": true,
                             initialContentAlignment: go.Spot.Center,
-                            allowDrop: true  // handle drag-and-drop from the Palette
-                });
+                            allowDrop: true,  // handle drag-and-drop from the Palette
+                            "draggingTool.dragsLink": true
+                         }
+                );
         // when the document is modified, add a "*" to the title and enable the "Save" button
         myDiagram.addDiagramListener("Modified", function(e) {
             var button = document.getElementById("SaveButton");
@@ -181,7 +187,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
         foreach($shapes_output as $item):
             $footer .= '
             myDiagram.nodeTemplateMap.add("'.$item['id'].'",
-                $(go.Node, "Table",
+                    $(go.Node, "Table",
                         { locationObjectName: "BODY",
                             locationSpot: go.Spot.Left,
                             selectionObjectName: "BODY"
@@ -270,9 +276,24 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
         // initialize the Palette that is on the left side of the page
         myPalette =
             $(go.Palette, "myPaletteDiv",  // must name or refer to the DIV HTML element
-                {
-                    nodeTemplateMap: myDiagram.nodeTemplateMap,  
-                    model: new go.GraphLinksModel([  ';
+                  {
+                    nodeTemplateMap: myDiagram.nodeTemplateMap,                     
+                    maxSelectionCount: 1,
+                    linkTemplate: // simplify the link template, just in this Palette
+            $(go.Link,                 
+                  {
+                    routing: go.Link.Orthogonal,
+                    corner: 3,
+                    reshapable: true,
+                    resegmentable: true
+                  },                 
+                  new go.Binding("points"),
+                        $(go.Shape,
+                                { stroke: "#2F4F4F", strokeWidth: 2 },
+                                new go.Binding("stroke", "link")
+                        )                      
+                   ),                      
+                  model: new go.GraphLinksModel([  ';
                             foreach($shapes_output as $item):
                                 $footer .= '{ category: "'.$item['id'].'",
                                         Top : [';
@@ -312,9 +333,12 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                                                 endif;
                                         $footer .= ']
                                 },';
-                        endforeach;
-                $footer .= '])
-                });
+                            endforeach;
+                     $footer .= '],[
+                                    // the Palette also has a disconnected Link, which the user can drag-and-drop
+                                    { points: new go.List(go.Point).addAll([new go.Point(0, 0), new go.Point(30, 0), new go.Point(30, 40), new go.Point(60, 40)]) }
+                                  ])
+                  });
         load();  // load an initial diagram from some JSON text
     </script>';
 
