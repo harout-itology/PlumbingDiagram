@@ -54,6 +54,7 @@
                     <li class="" ><a href="/html/diagram.php">Home</a></li>
                     <li class="" ><a href="/html/shape.php">Shapes List</a></li>
                     <li class="" ><a href="/html/port.php">Ports List</a></li>
+                    <li class="" ><a href="/html/line.php">Lines List</a></li>
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
