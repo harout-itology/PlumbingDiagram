@@ -44,7 +44,7 @@ $body = '
         </div>
     </div>
 </div>
-<textarea id="mySavedModel" style="display:none" rows="10" cols="100">
+<textarea id="mySavedModel" style="width:100%;display:" rows="10" >
 { "class": "go.GraphLinksModel",
           "copiesArrays": true,
           "copiesArrayObjects": true,
@@ -180,7 +180,8 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                         new go.Binding("points").makeTwoWay(),
                         $(go.Shape,
                                 { stroke: "#2F4F4F", strokeWidth: 2 },
-                                new go.Binding("stroke", "link")
+                                new go.Binding("stroke", "color"),
+                                new go.Binding("strokeWidth", "size")                                
                         )
                 );';
          
@@ -290,7 +291,8 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                   new go.Binding("points"),
                         $(go.Shape,
                                 { stroke: "#2F4F4F", strokeWidth: 2 },
-                                new go.Binding("stroke", "link")
+                                new go.Binding("stroke", "color"),
+                                new go.Binding("strokeWidth", "size")
                         )                      
                    ),                      
                   model: new go.GraphLinksModel([  ';
@@ -334,10 +336,11 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                                         $footer .= ']
                                 },';
                             endforeach;
-                     $footer .= '],[
-                                    // the Palette also has a disconnected Link, which the user can drag-and-drop
-                                    { points: new go.List(go.Point).addAll([new go.Point(0, 0), new go.Point(30, 0), new go.Point(30, 40), new go.Point(60, 40)]) }
-                                  ])
+                     $footer .= '],[';
+                                    foreach($lines_output as $item):
+                                        $footer .='{ points: new go.List(go.Point).addAll([new go.Point(0, 0), new go.Point(30, 0), new go.Point(30, 40), new go.Point(60, 40)]),"color":"'.$item['color'].'","size":"'.$item['size'].'" },';
+                                    endforeach;
+                     $footer .='] )
                   });
         load();  // load an initial diagram from some JSON text
     </script>';
