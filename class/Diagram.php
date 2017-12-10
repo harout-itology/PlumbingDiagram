@@ -27,12 +27,10 @@ class Diagram extends AbstractClass{
         $sql = "SELECT *  FROM  `diagram_shape` where `diagram_id` = '$id' ";
         $shapes = $conn->query($sql);
         $shapes =  $shapes->fetchAll();
-
         foreach ($shapes as $item){
             $array['category'] = $item['category'];
             $array['key'] = $item['key'];
             $array['loc'] = $item['loc'];
-
             // add ports
             $sql = "SELECT *  FROM  `ports` where `shape_id` = '$item[category]' ";
             $ports = $conn->query($sql);
@@ -42,12 +40,26 @@ class Diagram extends AbstractClass{
                 $arr['portId']= $port['id'];
                 $array[$port['location']] = [$arr];
             }
-
-
             $shapes_out[] = $array;
         }
 
-        return ['diagram'=>$diagram,'shapes'=>$shapes_out];
+        $sql = "SELECT diagram_line.*, lines.color, lines.size  FROM  diagram_line 
+    LEFT JOIN `lines` ON diagram_line.line_id=lines.id
+    WHERE diagram_line.diagram_id = '$id'  ";
+        $lines = $conn->query($sql);
+        $lines =  $lines->fetchAll();
+        foreach ($lines as $item){
+            $array2['lineId'] = $item['line_id'];
+            $array2['from'] = $item['from_key'];
+            $array2['to'] = $item['to_key'];
+            $array2['fromPort'] = $item['from_port'];
+            $array2['toPort'] = $item['to_port'];
+            $array2['color'] = $item['color'];
+            $array2['size'] = $item['size'];
+            $lines_out[] = $array2;
+        }
+
+        return ['diagram'=>$diagram,'shapes'=>$shapes_out,'lines'=>$lines_out];
 
     }
 
@@ -82,6 +94,18 @@ class Diagram extends AbstractClass{
             $conn->exec($sql);
         }
 
+        // line
+        foreach ($content->linkDataArray as $item){
+            $from_key = $item->from;
+            $to_key = $item->to;
+            $from_port = $item->fromPort;
+            $line_id = $item->lineId;
+            $to_port = $item->toPort;
+            $sql = "INSERT INTO `diagram_line` (`diagram_id`, `line_id`, `from_key`, `to_key`, `from_port`, `to_port` )  VALUES 
+                   ('$id', '$line_id', '$from_key','$to_key','$from_port', '$to_port') ";
+            $conn->exec($sql);
+        }
+
         return $id;
 
     }
@@ -108,7 +132,6 @@ class Diagram extends AbstractClass{
 
         $sql = "DELETE  FROM  `diagram_shape` where `diagram_id` = '$id' ";
         $conn->query($sql);
-
         // shapes
         foreach ($content->nodeDataArray as $item){
             $category = $item->category;
@@ -116,6 +139,20 @@ class Diagram extends AbstractClass{
             $loc = $item->loc;
             $sql = "INSERT INTO `diagram_shape` (`diagram_id`, `category`, `key`, `loc` )  VALUES 
                    ('$id','$category','$key','$loc') ";
+            $conn->exec($sql);
+        }
+
+        $sql = "DELETE  FROM  `diagram_line` where `diagram_id` = '$id' ";
+        $conn->query($sql);
+        // line
+        foreach ($content->linkDataArray as $item){
+            $from_key = $item->from;
+            $to_key = $item->to;
+            $from_port = $item->fromPort;
+            $line_id = $item->lineId;
+            $to_port = $item->toPort;
+            $sql = "INSERT INTO `diagram_line` (`diagram_id`, `line_id`, `from_key`, `to_key`, `from_port`, `to_port` )  VALUES 
+                   ('$id', '$line_id', '$from_key','$to_key','$from_port', '$to_port') ";
             $conn->exec($sql);
         }
 

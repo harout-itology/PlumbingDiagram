@@ -12,6 +12,7 @@ if(isset($_GET['id'])){
     $diagram_output = $diagram->view($conn,$_GET['id'] );
     $diagram_data = $diagram_output['diagram'];
     $diagram_shapes = $diagram_output['shapes'];
+    $diagram_lines = $diagram_output['lines'];
 }
 
 $shapes = new Shape();
@@ -44,22 +45,27 @@ $body = '
         </div>
     </div>
 </div>
-<textarea id="mySavedModel" style="width:100%;display:" rows="10" >
+<textarea id="mySavedModel" style="width:100%;display:none" rows="10" >
 { "class": "go.GraphLinksModel",
           "copiesArrays": true,
           "copiesArrayObjects": true,
           "linkFromPortIdProperty": "fromPort",
           "linkToPortIdProperty": "toPort",
           "nodeDataArray": ';
-if(isset($_GET['id'])){
-    $body .= json_encode($diagram_shapes);
-}
-else
-    $body .= '[]';
-$body .=
-',
-          "linkDataArray": []
-        }
+                if(isset($_GET['id'])){
+                    $body .= json_encode($diagram_shapes);
+                }
+                else
+                    $body .= '[]';
+                $body .=
+                ',
+          "linkDataArray": ';
+                if(isset($_GET['id'])){
+                    $body .= json_encode($diagram_lines);
+                }
+                else
+                    $body .= '[]';
+        $body .='}
 </textarea>';
 
 
@@ -292,7 +298,8 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                         $(go.Shape,
                                 { stroke: "#2F4F4F", strokeWidth: 2 },
                                 new go.Binding("stroke", "color"),
-                                new go.Binding("strokeWidth", "size")
+                                new go.Binding("strokeWidth", "size"),
+                                new go.Binding("fill", "lineId")
                         )                      
                    ),                      
                   model: new go.GraphLinksModel([  ';
@@ -338,7 +345,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                             endforeach;
                      $footer .= '],[';
                                     foreach($lines_output as $item):
-                                        $footer .='{ points: new go.List(go.Point).addAll([new go.Point(0, 0), new go.Point(30, 0), new go.Point(30, 40), new go.Point(60, 40)]),"color":"'.$item['color'].'","size":"'.$item['size'].'" },';
+                                        $footer .='{ points: new go.List(go.Point).addAll([new go.Point(0, 0), new go.Point(300, 25)]),"color":"'.$item['color'].'","size":"'.$item['size'].'","lineId":"'.$item['id'].'" },';
                                     endforeach;
                      $footer .='] )
                   });
