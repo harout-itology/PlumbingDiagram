@@ -1,78 +1,134 @@
-CREATE TABLE diagram_shape
+create table diagram_line
 (
-  id         INT AUTO_INCREMENT
-    PRIMARY KEY,
-  diagram_id INT          NULL,
-  category   INT          NULL,
-  `key`      INT          NULL,
-  loc        VARCHAR(255) NULL
+  id int auto_increment
+    primary key,
+  line_id int null,
+  diagram_id int null,
+  from_key int null,
+  to_key int null,
+  from_port int null,
+  to_port int null
 )
-  ENGINE = InnoDB;
+  engine=InnoDB
+;
 
-CREATE INDEX diagram_shape_diagrams__fk
-  ON diagram_shape (diagram_id);
+create index diagram_line_lines__fk
+  on diagram_line (line_id)
+;
 
-CREATE INDEX diagram_shape_shapes__fk
-  ON diagram_shape (category);
+create index diagram_line_diagrams__fk
+  on diagram_line (diagram_id)
+;
 
-CREATE TABLE diagrams
+create table diagram_shape
 (
-  id         INT AUTO_INCREMENT
-    PRIMARY KEY,
-  sector     VARCHAR(255)    NULL,
-  image      TEXT            NULL,
-  width      INT DEFAULT '0' NULL,
-  height     INT DEFAULT '0' NULL,
-  background VARCHAR(255)    NULL,
-  created    DATETIME        NULL,
-  updated    VARCHAR(255)    NULL
+  id int auto_increment
+    primary key,
+  diagram_id int null,
+  category int null,
+  `key` int null,
+  loc varchar(255) null
 )
-  ENGINE = InnoDB;
+  engine=InnoDB
+;
 
-ALTER TABLE diagram_shape
-  ADD CONSTRAINT diagram_shape_diagrams__fk
-FOREIGN KEY (diagram_id) REFERENCES diagrams (id)
-  ON UPDATE CASCADE
-  ON DELETE CASCADE;
+create index diagram_shape_diagrams__fk
+  on diagram_shape (diagram_id)
+;
 
-CREATE TABLE ports
+create index diagram_shape_shapes__fk
+  on diagram_shape (category)
+;
+
+create table diagrams
 (
-  id       INT AUTO_INCREMENT
-    PRIMARY KEY,
-  shape_id INT         NULL,
-  name     VARCHAR(55) NULL,
-  location VARCHAR(55) NULL,
-  color    VARCHAR(55) NULL,
-  created  DATETIME    NULL,
-  updated  VARCHAR(55) NULL
+  id int auto_increment
+    primary key,
+  sector varchar(255) null,
+  image text null,
+  width int default '0' null,
+  height int default '0' null,
+  background varchar(255) null,
+  created datetime null,
+  updated varchar(255) null
 )
-  ENGINE = InnoDB;
+  engine=InnoDB
+;
 
-CREATE INDEX ports_shapes__fk
-  ON ports (shape_id);
+alter table diagram_line
+  add constraint diagram_line_diagrams__fk
+foreign key (diagram_id) references diagrams (id)
+  on update cascade on delete cascade
+;
 
-CREATE TABLE shapes
+alter table diagram_shape
+  add constraint diagram_shape_diagrams__fk
+foreign key (diagram_id) references diagrams (id)
+  on update cascade on delete cascade
+;
+
+create table `lines`
 (
-  id         INT AUTO_INCREMENT
-    PRIMARY KEY,
-  note       VARCHAR(255) NOT NULL,
-  type       VARCHAR(55)  NULL,
-  width      VARCHAR(55)  NULL,
-  height     VARCHAR(55)  NULL,
-  background VARCHAR(55)  NULL,
-  color      VARCHAR(55)  NULL,
-  created    DATETIME     NULL,
-  updated    DATETIME     NULL
+  id int auto_increment
+    primary key,
+  color varchar(255) null,
+  size int null,
+  type varchar(255) null,
+  status varchar(255) null,
+  notes varchar(255) null,
+  created datetime null,
+  updated datetime null
 )
-  ENGINE = InnoDB;
+  engine=InnoDB
+;
 
-ALTER TABLE diagram_shape
-  ADD CONSTRAINT diagram_shape_shapes__fk
-FOREIGN KEY (category) REFERENCES shapes (id);
+alter table diagram_line
+  add constraint diagram_line_lines__fk
+foreign key (line_id) references `lines` (id)
+;
 
-ALTER TABLE ports
-  ADD CONSTRAINT ports_shapes__fk
-FOREIGN KEY (shape_id) REFERENCES shapes (id)
-  ON UPDATE CASCADE
-  ON DELETE CASCADE;
+create table ports
+(
+  id int auto_increment
+    primary key,
+  shape_id int null,
+  name varchar(55) null,
+  location varchar(55) null,
+  color varchar(55) null,
+  created datetime null,
+  updated varchar(55) null
+)
+  engine=InnoDB
+;
+
+create index ports_shapes__fk
+  on ports (shape_id)
+;
+
+create table shapes
+(
+  id int auto_increment
+    primary key,
+  note varchar(255) not null,
+  type varchar(55) null,
+  width varchar(55) null,
+  height varchar(55) null,
+  background varchar(55) null,
+  color varchar(55) null,
+  created datetime null,
+  updated datetime null
+)
+  engine=InnoDB
+;
+
+alter table diagram_shape
+  add constraint diagram_shape_shapes__fk
+foreign key (category) references shapes (id)
+;
+
+alter table ports
+  add constraint ports_shapes__fk
+foreign key (shape_id) references shapes (id)
+  on update cascade on delete cascade
+;
 
