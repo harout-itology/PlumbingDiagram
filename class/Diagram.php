@@ -35,10 +35,26 @@ class Diagram extends AbstractClass{
             $sql = "SELECT *  FROM  `ports` where `shape_id` = '$item[category]' ";
             $ports = $conn->query($sql);
             $ports =  $ports->fetchAll();
+            $arr =  $Top =  $Right =  $Left =   $Bottom = [];
             foreach ($ports as $port){
                 $arr['portColor']= $port['color'];
                 $arr['portId']= $port['id'];
-                $array[$port['location']] = [$arr];
+                if($port['location']=='Top')
+                    $Top[] = $arr;
+                if($port['location']=='Right')
+                    $Right[] = $arr;
+                if($port['location']=='Left')
+                    $Left[] = $arr;
+                if($port['location']=='Bottom')
+                    $Bottom[] = $arr;
+                if(isset($Top))
+                    $array['Top'] = $Top;
+                if(isset($Right))
+                    $array['Right'] = $Right;
+                if(isset($Left))
+                    $array['Left'] = $Left;
+                if(isset($Bottom))
+                    $array['Bottom'] = $Bottom;
             }
             $shapes_out[] = $array;
         }
@@ -48,6 +64,7 @@ class Diagram extends AbstractClass{
     WHERE diagram_line.diagram_id = '$id'  ";
         $lines = $conn->query($sql);
         $lines =  $lines->fetchAll();
+        $lines_out = [];
         foreach ($lines as $item){
             $array2['lineId'] = $item['line_id'];
             $array2['from'] = $item['from_key'];
