@@ -22,10 +22,10 @@
     <meta name="description" content="MegaProgramming">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta property="og:image"   content="/img/favicon.png">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/img/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <meta property="og:image"   content="../img/favicon.png">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
     <!-- Styles -->
     <link href="../css/app.css" rel="stylesheet">
     <link href="../css/custom.css" rel="stylesheet">
@@ -44,17 +44,17 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="index.php">
                     Diagram
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li class="" ><a href="/html/diagram.php">Home</a></li>
-                    <li class="" ><a href="/html/shape.php">Shapes List</a></li>
-                    <li class="" ><a href="/html/port.php">Ports List</a></li>
-                    <li class="" ><a href="/html/line.php">Lines List</a></li>
+                    <li class="" ><a href="diagram.php">Home</a></li>
+                    <li class="" ><a href="shape.php">Shapes List</a></li>
+                    <li class="" ><a href="port.php">Ports List</a></li>
+                    <li class="" ><a href="line.php">Lines List</a></li>
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -87,7 +87,7 @@
     </div>
 </footer>
 <!-- Scripts -->
-<script src="/js/app.js"></script>
+<script src="../js/app.js"></script>
 <?= $footer ?>
 </body>
 </html>

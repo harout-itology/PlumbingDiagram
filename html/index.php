@@ -9,4 +9,4 @@
 
 
 
-header('location: html/diagram.php');
+header('location: diagram.php');

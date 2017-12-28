@@ -70,7 +70,7 @@ $body = '
 
 
 $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
-    <script src="/js/gojs.net/go.js"></script>
+    <script src="../js/gojs.net/go.js"></script>
     <script>';
         if(isset($_GET['id'])) {
             $footer .= '
@@ -85,7 +85,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                 window.localStorage.setItem("diagram", temp);
                 // db ajax save
                 xhr = new XMLHttpRequest();
-                xhr.open("POST", "/html/diagram_func.php");
+                xhr.open("POST", "diagram_func.php");
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onload = function() {
                     if (xhr.status === 200)
@@ -109,12 +109,12 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                 window.localStorage.setItem("diagram", temp);
                 // db ajax save
                 xhr = new XMLHttpRequest();
-                xhr.open("POST", "/html/diagram_func.php");
+                xhr.open("POST", "diagram_func.php");
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");            
                 xhr.onload = function() {
                     if (xhr.status === 200)     
                         //console.log(xhr.responseText);             
-                        location.href= "/html/diagram_form.php?id="+xhr.responseText;
+                        location.href= "diagram_form.php?id="+xhr.responseText;
                     else if (xhr.status !== 200)
                         console.log(xhr.status);
                 };
@@ -185,7 +185,7 @@ $footer='<!--   GoJS v1.8.2 JavaScript Library for HTML Diagrams -->
                         },
                         new go.Binding("points").makeTwoWay(),
                         $(go.Shape,
-                                { stroke: "#2F4F4F", strokeWidth: 2 },
+                                { stroke: "#2F4F4F", strokeWidth: 5 },
                                 new go.Binding("stroke", "color"),
                                 new go.Binding("strokeWidth", "size")                                
                         )

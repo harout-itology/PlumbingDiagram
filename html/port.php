@@ -50,7 +50,7 @@ foreach ($output as $item){
                                     <td>'.$item['created'].'</td>
                                     <td>'.$item['updated'].'</td>                                    
                                     <td>
-                                        <a href="/html/port_edit.php?id='.$item['id'].'" class="btn btn-default btn-sm">Edit Ports</a>                                                                              
+                                        <a href="port_edit.php?id='.$item['id'].'" class="btn btn-default btn-sm">Edit Ports</a>                                                                              
                                     </td>
                           </tr>
                 ';

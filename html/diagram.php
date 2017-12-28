@@ -15,14 +15,14 @@ $body = '
 <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href="/html/diagram_form.php" class="btn btn-primary pull-right btn-sm">Create New</a><br><br>
+                <a href="diagram_form.php" class="btn btn-primary pull-right btn-sm">Create New</a><br><br>
             </div>';
             foreach ($output as $item) {
                 $body .= '
                 <div class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <a href="/html/diagram_form.php?id='.$item['id'].'"><div class="img btn">'.
+                            <a href="diagram_form.php?id='.$item['id'].'"><div class="img btn">'.
                                 $item['image']
                             .'</div></a>
                             <div class="caption">

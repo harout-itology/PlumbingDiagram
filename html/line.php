@@ -23,7 +23,7 @@ $body = '
 <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href="/html/line_create.php" class="btn btn-primary pull-right btn-sm">Create New</a><br><br>
+                <a href="line_create.php" class="btn btn-primary pull-right btn-sm">Create New</a><br><br>
             </div>';
 
     if(isset($msg))
@@ -52,7 +52,7 @@ $body = '
                                     <td>'.$item['created'].'</td>
                                     <td>'.$item['updated'].'</td>                                    
                                     <td>
-                                        <a href="/html/line_edit.php?id='.$item['id'].'" class="btn btn-default btn-sm">Edit</a>
+                                        <a href="line_edit.php?id='.$item['id'].'" class="btn btn-default btn-sm">Edit</a>
                                         <a href="?id='.$item['id'].'" class="btn btn-default btn-sm">Delete</a>                                            
                                     </td>
                           </tr>
